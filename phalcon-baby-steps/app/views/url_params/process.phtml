@@ -1,0 +1,14 @@
+<h4>Hello to the View of the processAction from controller UrlParams!</h4>
+
+<?php if (isset($bazinga, $idade)): ?>
+
+	<?php echo "Username: " . $bazinga; ?>
+	<br>
+	<?php echo "Age: " . $idade; ?>
+	<br>
+	<?php echo "Color: " . $cor; ?>
+
+<?php else: ?>
+	<?php echo "nothing to process - make sure you pass some parms on the URL" ?>
+<?php endif ?>
+

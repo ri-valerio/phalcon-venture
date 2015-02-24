@@ -1,0 +1,23 @@
+<h3>Hello from Index!</h3>
+<?php echo \Phalcon\Tag::linkTo("url_params","Go to UrlParamsController"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("user","Go to UserController"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("router","Go to RouterController"); ?>
+
+<br>
+<br>
+<br>
+<br>
+
+<?php echo \Phalcon\Tag::linkTo("index/startSession",
+								"Start a new session with some stuff"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("index/getSession",
+						"get the session with some stuff if it exists"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("index/removeSession",
+					"remove the session with some stuff if it exists"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("index/destroySession",
+					"destroy the session with some stuff if it exists");?>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Main Layout</title>
+
+	<?php $this->assets->outputCss(); ?>
+	<!-- <?php echo Phalcon\Tag::stylesheetLink("css/normalize.css"); ?> -->
+	<!-- <?php echo Phalcon\Tag::stylesheetLink("css/mainLayout.css"); ?> -->
+
+
+</head>
+<body>
+	<h1 style="color:red;">This is the Main Layout of the app - all controllers will inject their views in this file!</h1>
+
+	<?php echo $this->getContent(); ?>
+
+
+<br> <br> <br> <br> <br>
+<?php echo \Phalcon\Tag::linkTo("","Back to Index!"); ?>
+
+
+
+	<?php $this->assets->outputJs(); ?>
+	<!-- <?php echo Phalcon\Tag::javascriptInclude("js/jquery.min.js"); ?> -->
+</body>
+</html>

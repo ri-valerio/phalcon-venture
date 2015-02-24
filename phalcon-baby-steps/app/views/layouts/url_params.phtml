@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Main UrlParams Layout</title>
+
+	<?php echo Phalcon\Tag::stylesheetLink("css/normalize.css"); ?>
+
+<style>
+	body{
+		background-color: green;
+		color:white;
+	}
+	a{
+		font-size: 25px;
+		color:yellow;
+	}
+</style>
+</head>
+<body>
+
+	<h1 style="color:red;">Main Layout of the UrlParamsController</h1>
+
+	<?php echo $this->getContent(); ?>
+
+<br> <br> <br> <br> <br>
+<?php echo \Phalcon\Tag::linkTo("","Back to Index!"); ?>
+
+</body>
+</html>

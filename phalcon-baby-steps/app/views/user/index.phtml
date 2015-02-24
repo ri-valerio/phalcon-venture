@@ -1,0 +1,44 @@
+<h1>Hello to the view of the indexAction from UserController</h1>
+
+<h4>Select By Id:</h4>
+<?php if (property_exists($single, 'id')): ?>
+	<?php echo $single->id; ?>
+	<?php echo $single->email; ?>
+	<br>
+		<?php foreach ($single->project as $p): ?>
+			<?php echo '&nbsp&nbsp&nbsp' . $p->id; ?>
+			<?php echo '&nbsp&nbsp&nbsp' . $p->title; ?>
+			<?php echo '&nbsp&nbsp&nbsp' . $p->created_at; ?>
+			<br>
+		<?php endforeach ?>
+<?php endif ?>
+
+<hr>
+
+<h4>Select All:</h4>
+<?php foreach ($all as $user): ?>
+	<?php echo $user->id; ?>
+	<?php echo $user->email; ?>
+	<?php echo $user->deleted; ?>
+	<br>
+		<?php foreach ($user->project as $p): ?>
+			<?php echo '&nbsp&nbsp&nbsp' . $p->id; ?>
+			<?php echo '&nbsp&nbsp&nbsp' . $p->title; ?>
+			<?php echo '&nbsp&nbsp&nbsp' . $p->created_at; ?>
+			<br>
+		<?php endforeach ?>
+	<br>
+	<br>
+<?php endforeach ?>
+
+<br>
+<hr>
+<br>
+
+<?php echo \Phalcon\Tag::linkTo("user/create","create a random test User to save in your DB!"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("user/update","update the user with id #x"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("user/delete","delete the user with id #x"); ?>
+<br>
+<?php echo \Phalcon\Tag::linkTo("user/createAssoc","create a new project for the user with id #x"); ?>
