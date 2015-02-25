@@ -39,6 +39,10 @@ class Acordos extends \Phalcon\Mvc\Model
     // para mais informação:
 // http://docs.phalconphp.com/en/latest/reference/models.html#events-and-events-manager
 
+    // The easier way to make a model react to events is implement a method
+    // with the same name of the event in the model’s class.
+
+
     public function beforeValidation()
     {
          echo <br> . "The Method beforeValidation was executed!" . <br> ;
@@ -103,6 +107,23 @@ class Acordos extends \Phalcon\Mvc\Model
     {
          echo <br> . "The Method afterSave was executed!" . <br> ;
     }
+
+
+
+    // Events can be useful to assign values before performing an operation, for example:
+
+    public function beforeCreate()
+    {
+        //Set the creation date
+        $this->created_at = date('Y-m-d H:i:s');
+    }
+
+    public function beforeUpdate()
+    {
+        //Set the modification date
+        $this->modified_in = date('Y-m-d H:i:s');
+    }
+
 
 /*************************************************************/
 
