@@ -25,8 +25,7 @@ class Acordos extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    public $
-    ;
+    public $foto_instituicao;
 
 /*************************************************************/
 
