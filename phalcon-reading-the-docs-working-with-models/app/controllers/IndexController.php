@@ -510,6 +510,21 @@ class IndexController extends ControllerBase
         else{
             echo "The doctor doesn't exist yet or anymore";
         }
+
+        /**
+         *  we can also delete many records by traversing a resultset with a foreach:
+         *
+         * foreach (Medicos::find("type='blahblah'") as $medico) {
+         *     if ($medico->delete() == false) {
+         *         echo "Sorry, we can't delete the doctor right now: \n";
+         *         foreach ($medico->getMessages() as $message) {
+         *             echo $message, "\n";
+         *         }
+         *     } else {
+         *         echo "The doctor was deleted successfully!";
+         *     }
+         * }
+         */
     }
 
 }
