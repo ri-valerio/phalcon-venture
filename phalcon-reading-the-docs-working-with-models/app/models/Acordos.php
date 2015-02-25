@@ -124,8 +124,47 @@ class Acordos extends \Phalcon\Mvc\Model
         $this->modified_in = date('Y-m-d H:i:s');
     }
 
+    //     Implementing a Business Rule¶
+    // When an insert, update or delete is executed, the model verifies
+    // if there are any methods with the names of the events listed above.
+
+    // validation methods should be declared protected to prevent that business
+    // logic implementation from being exposed publicly.
+
+    // The following example implements an event that validates the year cannot
+    // be smaller than 0 on update or insert:
+
+    public function beforeSave()
+    {
+            if ($this->year < 0) {
+                echo "Year cannot be smaller than zero!";
+                return false;
+            }
+    }
 
 /*************************************************************/
+
+    // Validating Data Integrity
+    // Phalcon\Mvc\Model provides several events to validate data
+    // and implement business rules. The special “validation” event allows us
+    // to call built-in validators over the record.
+    // Phalcon exposes a few built-in validators that can be
+    // used at this stage of validation:
+
+        // PresenceOf
+        // Email
+        // ExclusionIn
+        // InclusionIn
+        // Numericality
+        // Regex
+        // Uniqueness
+        // StringLength
+        // Url
+
+
+    // In addition to the built-in validators, you can create your own validators:
+    // more info:
+    // http://docs.phalconphp.com/en/latest/reference/models.html#validating-data-integrity
 
 
 }
