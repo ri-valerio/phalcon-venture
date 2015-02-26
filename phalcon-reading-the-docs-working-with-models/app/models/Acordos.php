@@ -160,5 +160,21 @@ class Acordos extends \Phalcon\Mvc\Model
 
 
 
+    // BEHAVIORS
+    // The following built-in behaviors are provided by the framework:
+
+    // Timestampable:
+    //
+    // Allows to automatically update a model’s attribute saving the datetime
+    // when a record is created or updated
+    // http://docs.phalconphp.com/en/latest/reference/models.html#timestampable
+    //
+    // SoftDelete:
+    //
+    // Instead of permanently delete a record it marks the record as deleted
+    // changing the value of a flag column
+    // http://docs.phalconphp.com/en/latest/reference/models.html#softdelete
+
+
 
 }
