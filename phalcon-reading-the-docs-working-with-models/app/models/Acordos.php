@@ -3,6 +3,21 @@
 class Acordos extends \Phalcon\Mvc\Model
 {
 
+    // POINTING TO A DIFFERENT SCHEMA
+    // If a model is mapped to a table that is in a different schemas/databases
+    // than the default. You can use the getSchema method to define that:
+
+    // public function getSchema()
+    // {
+    //     return "DATABASE_NAME";
+    // }
+
+    // it's also possible to set multiple databases, both for reading and writting
+    // http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases
+
+/*---------------------------------------------------*/
+
+
     /**
      *
      * @var integer

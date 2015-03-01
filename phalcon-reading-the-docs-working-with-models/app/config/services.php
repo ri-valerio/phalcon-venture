@@ -54,6 +54,12 @@ $di->set('view', function () use ($config) {
  * Database connection is created based in the parameters defined in the configuration file
  */
 $di->set('db', function () use ($config) {
+
+    // aqui é possível fazer com que os comandos SQL que são gerados pela abstracção
+    // do ORM Model, sejam colocados num ficheiro para entender algum eventual
+    // problema que possa ocorrer
+    // http://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements
+
     return new DbAdapter(array(
         'host' => $config->database->host,
         'username' => $config->database->username,
