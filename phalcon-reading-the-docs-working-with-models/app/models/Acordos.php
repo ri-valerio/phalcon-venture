@@ -15,6 +15,16 @@ class Acordos extends \Phalcon\Mvc\Model
     // it's also possible to set multiple databases, both for reading and writting
     // http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases
 
+   // POINTING TO A DIFFERENT TABLE IN THE DB
+
+    // public function getSource()
+    // {
+    //     return "TABLE_NAME";
+    // }
+
+    // it's also possible to set multiple databases, both for reading and writting
+    // http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases
+
 /*---------------------------------------------------*/
 
 
