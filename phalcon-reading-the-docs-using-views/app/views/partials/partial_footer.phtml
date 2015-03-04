@@ -1,9 +1,21 @@
 <!--
 
- criei a pasta partials/
- criei tbm este ficheiro para testar a funcionalidade de renderizar
-  partials nas views
+criei a pasta partials/
+e depois criei tbm este ficheiro para testar a funcionalidade de renderizar
+partials nas views
 
+Partial templates are another way of breaking the rendering process into
+simpler more manageable chunks that can be reused by different parts of the
+application. With a partial, you can move the code for rendering a particular
+piece of a response to its own file.
 
+http://docs.phalconphp.com/en/latest/reference/views.html#using-partials
 
-  -->
+-->
+
+<ul style="color: darkgoldenrod;">
+	<li>this is an awesome footer</li>
+	<li>it is in the partial folder</li>
+</ul>
+
+<?php echo $nome; ?>

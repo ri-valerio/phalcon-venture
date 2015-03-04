@@ -1,1 +1,11 @@
 <p>Hello from view of helloAction in IndexController</p>
+
+<hr/>
+<?php $this->partial("partials/partial_hello"); ?>
+<!-- é também possível passar um array caso queiramos colocar valores que
+são lançados do controller, neste caso estou a definir directamente um valor
+hardcoded
+-->
+<?php $this->partial("partials/partial_footer",
+					array("nome" => "Ricardo Valério")); ?>
+<hr/>

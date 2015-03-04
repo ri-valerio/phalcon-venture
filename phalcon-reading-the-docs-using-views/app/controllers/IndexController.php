@@ -16,7 +16,17 @@ class IndexController extends ControllerBase
 
 	public function helloAction()
 	{
+		//TRANSFER VALUES FROM THE CONTROLLER TO VIEWS
 
+		//Pass all the posts to the views
+		$this->view->setVar("medicos", Medicos::find());
+		//Using the magic setter
+		$this->view->posts = Acordos::find();
+		//Passing more than one variable at the same time
+		$this->view->setVars(array(
+			'title' => $post->title,
+			'content' => $post->content
+		));
 	}
 
 	public function pickAction()
