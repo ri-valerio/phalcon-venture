@@ -20,12 +20,12 @@ class IndexController extends ControllerBase
 
 		//Pass all the posts to the views
 		$this->view->setVar("medicos", Medicos::find());
-		//Using the magic setter
-		$this->view->posts = Acordos::find();
+		// ou usando o mágico setter
+		$this->view->acordos = Acordos::find();
 		//Passing more than one variable at the same time
 		$this->view->setVars(array(
-			'title' => $post->title,
-			'content' => $post->content
+			'series_title' => "The Big Bang Theory",
+			'actor' => "Sheldon Cooper"
 		));
 	}
 

@@ -1,5 +1,22 @@
 <p>Hello from view of helloAction in IndexController</p>
 
+<ul>
+<?php foreach ($medicos as $medico): ?>
+	<li><?php echo $medico->primeiro_nome; ?></li>
+<?php endforeach ?>
+</ul>
+
+<ul>
+	<?php foreach ($acordos as $acordo): ?>
+		<li><?php echo $acordo->instituicao; ?></li>
+	<?php endforeach ?>
+</ul>
+
+<ul>
+	<li><?php echo $series_title; ?></li>
+	<li><?php echo $actor; ?></li>
+</ul>
+
 <hr/>
 <?php $this->partial("partials/partial_hello"); ?>
 <!-- é também possível passar um array caso queiramos colocar valores que
