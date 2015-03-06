@@ -62,5 +62,12 @@ class IndexController extends ControllerBase
 		return $this->response->redirect("index/index");
 	}
 
+	public function ajaxAction()
+	{
+		$data = "Ja se zovem Nedim Omerbegovic";
+		echo json_encode($data);
+		$this->view->disable();
+	}
+
 }
 

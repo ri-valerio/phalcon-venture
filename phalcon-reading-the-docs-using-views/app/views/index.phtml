@@ -2,6 +2,18 @@
 <html>
 	<head>
 		<title>Phalcon PHP Framework</title>
+		<script type="text/javascript">
+
+//			aqui o objectivo era mostrar como se pode criar uma url com
+//          as convenções da framework, o ajax não está a funcionar
+			$.ajax({
+				url: "<?php echo $this->url->get("index/ajax") ?>"
+			})
+				.done(function() {
+					alert("Done!");
+				});
+
+		</script>
 	</head>
 	<body>
 		<h1>This is main action it will be shown for every controller or action executed within the application.</h1>
