@@ -1,8 +1,8 @@
 <!--Templates are views that can be used to share common view code. They act as controller layouts, so you need to place them in the layouts directory. -->
 <ul class="menu">
-	<li><?php echo Phalcon\Tag::linkTo("", "Home"); ?></li>
-	<li><?php echo Phalcon\Tag::linkTo("index/hello", "Hello"); ?></li>
-	<li><?php echo Phalcon\Tag::linkTo("index/pick", "Pick"); ?></li>
+	<li><?php echo $this->tag->linkTo("", "Home"); ?></li>
+	<li><?php echo $this->tag->linkTo("index/hello", "Hello"); ?></li>
+	<li><?php echo $this->tag->linkTo("index/pick", "Pick"); ?></li>
 </ul>
 
 <?php echo $this->getContent(); ?>
