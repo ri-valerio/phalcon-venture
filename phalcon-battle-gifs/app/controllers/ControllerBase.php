@@ -5,7 +5,7 @@ use Phalcon\Mvc\Controller;
 class ControllerBase extends Controller
 {
   public function initialize()
-	{
+  {
       $this->tag->setDoctype(\Phalcon\Tag::HTML5);
 
       Phalcon\Tag::prependTitle('Battle Gifs | ');
@@ -15,6 +15,6 @@ class ControllerBase extends Controller
       //
       // $this->assets->addJs('public/js/jquery.js')
       //        ->addJs('public/js/app.min.js');
-	}
+  }
 
 }
