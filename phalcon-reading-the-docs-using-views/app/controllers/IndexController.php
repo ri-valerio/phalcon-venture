@@ -9,6 +9,9 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
+	    $this->tag->appendTitle(" | indexAction");
+//	    $this->tag->prependTitle(" | indexAction");
+
 	    // coloca o template que está na pasta layout
 		$this->view->setTemplateAfter("template_common");
 		//$this->view->setTemplateBefore("template_common");
@@ -16,8 +19,10 @@ class IndexController extends ControllerBase
 
 	public function helloAction()
 	{
-		//TRANSFER VALUES FROM THE CONTROLLER TO VIEWS
+		$this->tag->appendTitle(" | helloAction");
+//		$this->tag->prependTitle(" | helloAction");
 
+		//TRANSFER VALUES FROM THE CONTROLLER TO VIEWS
 		//Pass all the posts to the views
 		$this->view->setVar("medicos", Medicos::find());
 		// ou usando o mágico setter
@@ -31,6 +36,9 @@ class IndexController extends ControllerBase
 
 	public function pickAction()
 	{
+		$this->tag->appendTitle(" | pickAction");
+//		$this->tag->prependTitle(" | pickAction");
+
 		// the view default render is the one related with the last controller
 		// and action executed.
 		// But we can override this by using the Phalcon\Mvc\View::pick()
@@ -46,6 +54,9 @@ class IndexController extends ControllerBase
 
 	public function goodbyeAction()
 	{
+		$this->tag->appendTitle(" | goodbyeAction");
+//		$this->tag->prependTitle(" | goodbyeAction");
+
 		//		DISABLING THE VIEW
 		//If the controller doesn’t produce any output in the view
 		// (or not even have one) we may disable the view component

@@ -1,3 +1,138 @@
-<h1>indexController - indexAction View</h1>
+	<h1>indexController - indexAction View</h1>
 
-<p>This is the view related to the indexAction. It only will be shown when the "index" action was executed.</p>
+	<p>This is the view related to the indexAction. It only will be shown when the "index" action was executed.</p>
+
+	<!-- Specifying another method or attributes for the FORM tag -->
+	<!-- por padrão, se não colocarmos mais nada a não ser a action,
+	o method será POST -->
+	<!-- http://docs.phalconphp.com/en/latest/reference/tags.html#creating-forms -->
+<?php echo $this->tag->form(array("index/search", "method" => "get")); ?>
+
+		<label for="q">Search:</label>
+		<?php echo  $this->tag->textField("q"); ?>
+
+		<!-- Phalcon provides a series of helpers to generate form elements such as
+		text fields, buttons and more. The first parameter of each helper is always
+		the name of the element to be generated. When the form is submitted,
+		the name will be passed along with the form data. In a controller you can
+		get these values using the same name by using the getPost() and getQuery()
+		methods on the request object ($this->request).
+		http://docs.phalconphp.com/en/latest/reference/tags.html#helpers-to-generate-form-elements
+		-->
+		<br/>
+
+		<?php echo $this->tag->textField("username"); ?>
+
+		<br/>
+		<?php echo $this->tag->textField(
+					array(
+						"price",
+						"size"        => 20,
+						"maxlength"   => 30,
+						"placeholder" => "Enter a price"
+					)
+				);
+		?>
+
+		<br/>
+
+		<?php echo $this->tag->textArea(
+					array(
+						"comment",
+						"This is the content of the text-area",
+						"cols" => 60,
+						"rows" => 20
+					)
+				);
+		?>
+
+		<br/>
+
+		<?php echo $this->tag->passwordField(
+					array(
+						"password",
+						"size" => 30
+					)
+				);
+		?>
+
+		<br/>
+
+		<?php echo $this->tag->hiddenField(
+					array(
+						"parent_id",
+						"value"=> 5
+					)
+				);
+		?>
+
+		<br/>
+
+		<?php
+
+		// Using data from a resultset
+		echo $this->tag->select(
+				array(
+					// id e name
+					"acordoId",
+					 // valores que estão na base de dados
+					  Acordos::find(array("column" => "instituicao")),
+
+					// especificar os campos a usar no atributes value e dentro
+					// do option
+					 "using" => array("id", "instituicao"),
+
+			         // facultativo
+					 "useEmpty"   => true,
+					 "emptyText"  => "Please, choose one...",
+	                 "emptyValue" => '@'
+					// não consegui encontrar uma forma de definir
+					// o option selected directamente feito aqui
+					// apenas encontrei como o definir no controller
+					// o que na minha opinião não é muito conveniente
+					// ter business rules das views nos controllers
+					// seja como for: o seguinte código deverá
+					// ser colocado na action responsável pela view
+					// onde se quer colocar o select
+					//
+					//$this->tag->setDefault("acordoId", "github");
+				)
+			);
+		?>
+
+		<?php
+		// Using data from an array
+		echo $this->tag->selectStatic(
+					array(
+						"status",
+						array(
+							"A" => "Active",
+							"I" => "Inactive"
+						)
+					)
+			);
+		?>
+
+		<?php echo $this->tag->submitButton("Search"); ?>
+
+<?php echo $this->tag->endForm(); ?>
+<?php echo $this->tag->image("http://fc06.deviantart.net/fs70/f/2012/181/a/2/code_monkeys_wallpaper_by_david878-d55ikfl.jpg"); ?>
+<?php echo $this->tag->image(
+	array(
+		"http://www.smartfeeling.org/codemonkeys/files/2012/04/tecno-monkey.jpg",
+		"alt" => "alternative text"
+	)
+); ?>
+
+	<hr/>
+<!-- é ainda possível criar qualquer tipo de tag através deste método -->
+<?php
+	echo $this->tag->tagHtml("canvas", array("id" => "canvas1", "width" => "300", "class" => "cnvclass"), false, true, true);
+	echo "This is my canvas";
+	echo $this->tag->tagHtmlClose("canvas", true);
+?>
+<!-- converts texts into URL-friendly titles -->
+	<?php echo Phalcon\Tag::friendlyTitle('These are big important news', '-') ?>
+
+<!-- para uma referência mais completa, ler a api : http://docs.phalconphp
+.com/en/latest/api/Phalcon_Tag.html -->

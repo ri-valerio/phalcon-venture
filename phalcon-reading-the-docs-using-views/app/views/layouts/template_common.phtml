@@ -1,8 +1,13 @@
 <!--Templates are views that can be used to share common view code. They act as controller layouts, so you need to place them in the layouts directory. -->
 <ul class="menu">
+<!-- gerar links:
+	o destino, o texto, e outros parâmetros como o id, class, etc.
+ http://docs.phalconphp.com/en/latest/reference/tags.html#generating-links
+ -->
 	<li><?php echo $this->tag->linkTo("", "Home"); ?></li>
 	<li><?php echo $this->tag->linkTo("index/hello", "Hello"); ?></li>
 	<li><?php echo $this->tag->linkTo("index/pick", "Pick"); ?></li>
+	<li><?php echo $this->tag->linkTo("index/goodbye", "Goodbye"); ?></li>
 </ul>
 
 <?php echo $this->getContent(); ?>
