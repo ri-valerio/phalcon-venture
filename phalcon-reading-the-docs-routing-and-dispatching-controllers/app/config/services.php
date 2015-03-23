@@ -13,7 +13,16 @@ use Phalcon\Session\Adapter\Files as SessionAdapter;
  */
 $di = new FactoryDefault();
 
+
 /**
+ * Load router from external file
+ */
+$di->set('router', function(){
+	require __DIR__."/../../app/config/routes.php"; //	require "routes.php";
+	return $router;
+});
+
+	/**
  * The URL component is used to generate all kind of urls in the application
  */
 $di->set('url', function () use ($config) {
@@ -38,7 +47,7 @@ $di->set('view', function () use ($config) {
             $volt = new VoltEngine($view, $di);
 
             $volt->setOptions(array(
-                'compiledPath' => $config->application->cacheDir,
+                'compiledPath'      => $config->application->cacheDir,
                 'compiledSeparator' => '_'
             ));
 
@@ -55,11 +64,11 @@ $di->set('view', function () use ($config) {
  */
 $di->set('db', function () use ($config) {
     return new DbAdapter(array(
-        'host' => $config->database->host,
+        'host'     => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
-        'dbname' => $config->database->dbname,
-        "charset" => $config->database->charset
+        'dbname'   => $config->database->dbname,
+        "charset"  => $config->database->charset
     ));
 });
 
