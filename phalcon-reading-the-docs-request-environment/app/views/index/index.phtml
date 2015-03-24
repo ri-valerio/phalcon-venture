@@ -1,0 +1,56 @@
+<h1>Congratulations!</h1>
+
+<p>You're now flying with Phalcon. Great things are about to happen!</p>
+
+<h3>Form method via GET</h3>
+<?php echo $this->tag->form(array("index/formViaGet", "method" => "GET")); ?>
+	<label for="username">Username:</label>
+	<?php echo $this->tag->textField("username"); ?>
+	<label for="email">Email:</label>
+	<?php echo $this->tag->emailField("user_email"); ?>
+
+	<!-- read phalcon docs -->
+	<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+	       value="<?php echo $this->security->getToken() ?>"/>
+
+
+	<?php echo $this->tag->submitButton("Submit"); ?>
+<?php echo $this->tag->endForm(); ?>
+
+<hr/>
+
+<h3>Form method via POST</h3>
+<?php echo $this->tag->form(array("index/formViaPost", "method" => "POST")); ?>
+	<label for="username">Username:</label>
+	<?php echo $this->tag->textField("username"); ?>
+	<label for="email">Email:</label>
+	<?php echo $this->tag->emailField("user_email"); ?>
+
+	<!-- read phalcon docs -->
+	<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+	       value="<?php echo $this->security->getToken() ?>"/>
+
+	<?php echo $this->tag->submitButton("Submit"); ?>
+<?php echo $this->tag->endForm(); ?>
+
+
+<hr/>
+
+
+<h3>Form method via POST</h3>
+<?php echo $this->tag->form(array("index/uploadFiles", "method" => "POST",
+      "charset" => "utf-8", "enctype" => "multipart/form-data")); ?>
+
+	<label>Form for upload files:</label><br/>
+	<input type="file" name="image_one" value="" accept="image/jpeg"><br/>
+	<input type="file" name="image_two" value="" accept="image/jpeg"><br/>
+	<input type="file" name="image_three" value="" accept="image/jpeg"><br/>
+
+	<!-- read phalcon docs -->
+	<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+	       value="<?php echo $this->security->getToken() ?>"/>
+	
+	<button type="submit">Submit Battle!</button>
+
+<?php echo $this->tag->endForm(); ?>
+
