@@ -1,3 +1,14 @@
-<h1>Congratulations!</h1>
+<h1>indexAction View</h1>
 
-<p>You're now flying with Phalcon. Great things are about to happen!</p>
+<?php echo $this->getContent(); ?>
+
+<hr/>
+
+<?php echo $this->tag->linkTo("index/index", "Go to index again
+Component"); ?>
+<br/>
+<?php echo $this->tag->linkTo("index/forward", "Go to forwardAction and test the flash Direct
+Component"); ?>
+<br/>
+<?php echo $this->tag->linkTo("index/redirect", "Go to redirectAction and test the
+flashSession component"); ?>

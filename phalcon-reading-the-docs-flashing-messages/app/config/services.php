@@ -38,7 +38,7 @@ $di->set('view', function () use ($config) {
             $volt = new VoltEngine($view, $di);
 
             $volt->setOptions(array(
-                'compiledPath' => $config->application->cacheDir,
+                'compiledPath'      => $config->application->cacheDir,
                 'compiledSeparator' => '_'
             ));
 
@@ -55,11 +55,11 @@ $di->set('view', function () use ($config) {
  */
 $di->set('db', function () use ($config) {
     return new DbAdapter(array(
-        'host' => $config->database->host,
+        'host'     => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
-        'dbname' => $config->database->dbname,
-        "charset" => $config->database->charset
+        'dbname'   => $config->database->dbname,
+        "charset"  => $config->database->charset
     ));
 });
 
@@ -79,3 +79,12 @@ $di->set('session', function () {
 
     return $session;
 });
+
+/**
+ * Registar o flashSession para poder guardar flash messagens entre requests
+ */
+	// FACULTATIVO
+//$di->set('flashSession', function () {
+//	$flashSession = new \Phalcon\Flash\Session();
+//	return $flashSession;
+//});

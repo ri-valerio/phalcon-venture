@@ -1,0 +1,16 @@
+<h1>showAction View</h1>
+
+<p>hello</p>
+
+<!--para mostrar a flash message do component flashSession tem de ser assim:-->
+<?php $this->flashSession->output(); ?>
+<!--em vez da outra -->
+<?php //echo $this->getContent(); ?>
+
+<p>bye</p>
+
+<hr/>
+
+<?php echo $this->tag->linkTo("index/index", "Go to index again
+Component"); ?>
+<br/>
