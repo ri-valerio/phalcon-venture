@@ -112,5 +112,85 @@ class IndexController extends ControllerBase
 			}
 	}
 
+	public function serverInfoAction()
+	{
+		// Check the request layer
+		if ($this->request->isSecureRequest()) {
+			echo "The request was made using a secure layer";
+		}
+
+		// Get the servers's ip address. ie. 192.168.0.100
+		$serverIpAddress = $this->request->getServerAddress();
+		echo "Server Ip Adress: " . $serverIpAddress . "<br>" ;
+
+		// Get the client's ip address ie. 201.245.53.51
+		$clientIpAddress = $this->request->getClientAddress();
+		echo "Client Ip Adress: " . $clientIpAddress . "<br>";
+
+		// Get the User Agent (HTTP_USER_AGENT)
+		$userAgent = $this->request->getUserAgent();
+		echo "UserAgent: " . $userAgent . "<br>";
+
+		// Get the best acceptable content by the browser. ie text/xml
+		$contentType = $this->request->getAcceptableContent();
+		echo "Content Type: " . var_dump($contentType) . "<br>";
+
+		// Get the best charset accepted by the browser. ie. utf-8
+		$charset = $this->request->getBestCharset();
+		echo "Charset: " . $charset . "<br>";
+
+		// Get the best language accepted configured in the browser. ie. en-us
+		$language = $this->request->getBestLanguage();
+		echo "Language: " . $language . "<br>";
+
+	}
+
+
+	public function redirectAction($typeOfRedirect = null)
+	{
+		switch($typeOfRedirect)
+		{
+			case "default":
+				//Redirect to the default URI
+				$this->response->redirect();
+				break;
+			case "local":
+				//Redirect to the local base URI
+				$this->response->redirect("index/index");
+				break;
+			case "external":
+				//Redirect to an external URL
+				$this->response->redirect("http://en.wikipedia.org", TRUE);
+				break;
+			case "status-code":
+				//Redirect specifyng the HTTP status code
+				$this->response->redirect("http://www.example.com/new-location", TRUE,
+					301);
+				break;
+			case "lang":
+				//Redirect based on a named route
+				 $this->response->redirect(array(
+					"for"        => "index-lang", // named route
+					"lang"       => "jp", // named param
+					"controller" => "index", // controller
+					 "action"    => "index" // action
+				));
+				break;
+
+			default:
+				$this->response->redirect("http://www.google.com", TRUE);
+		}
+
+		$this->view->disable();
+	}
+
+
+	/**
+	 * existe ainda info sobre:
+	 *
+	 * http://docs.phalconphp.com/en/latest/reference/response.html#setting-an-expiration-time
+	 * http://docs.phalconphp.com/en/latest/reference/response.html#cache-control
+	 * http://docs.phalconphp.com/en/latest/reference/response.html#e-tag
+	 */
 }
 
