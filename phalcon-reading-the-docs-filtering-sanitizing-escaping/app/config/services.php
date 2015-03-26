@@ -74,18 +74,7 @@ $di->set('modelsMetadata', function () {
  * Start the session the first time some component request the session service
  */
 $di->set('session', function () {
-    $session = new SessionAdapter(array(
-//	    Sometimes a user can use the same application twice, on the same
-// server, in the same session . Surely, if we use variables in session,
-// we want that every application have separate session data(even though
-// the same code and same variable names). To solve this, you can add a
-// prefix for every session variable created in a certain application:
-
-//http://docs.phalconphp.com/en/latest/reference/session.html#isolating-session-data-between-applications
-
-	    //All variables created will prefixed with "my-app-1"
-	    'uniqueId' => 'my-app-1'
-    ));
+    $session = new SessionAdapter();
     $session->start();
 
     return $session;

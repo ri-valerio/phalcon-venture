@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phalcon PHP Framework</title>
+	</head>
+	<body>
+		<?php echo $this->getContent(); ?>
+
+		<hr/>
+
+		<?php echo $this->tag->linkTo("index/index", "Go to indexAction"); ?>
+		<br/>
+
+		<hr/>
+
+		<?php echo $this->tag->linkTo("index/displaySession", "Go to
+		displaySessionAction"); ?>
+		<br/>
+		<?php echo $this->tag->linkTo("index/removeSession", "Go to
+		removeSessionAction"); ?>
+		<br/>
+		<?php echo $this->tag->linkTo("index/destroySession", "Go to
+		destroySessionAction"); ?>
+		<br/>
+
+		<hr/>
+
+		<?php echo $this->tag->linkTo("index/displayPersistentVariable", "Go to
+		displayPersistentVariableAction"); ?>
+		<br/>
+		<?php echo $this->tag->linkTo("index/removePersistentVariable", "Go to
+		removePersistentVariableAction"); ?>
+		<br/>
+		<?php echo $this->tag->linkTo("index/destroyPersistentVariable", "Go to
+		destroyPersistentVariableAction"); ?>
+		<br/>
+
+	</body>
+</html>

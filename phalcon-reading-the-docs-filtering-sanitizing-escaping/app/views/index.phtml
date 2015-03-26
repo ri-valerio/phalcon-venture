@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phalcon PHP Framework</title>
+		<style>
+			body{
+				/* CSS identifiers/values can be escaped too: */
+				font-family: <?php echo $this->escaper->escapeCss
+				("Verdana</style>"); ?>;
+			}
+		</style>
+	</head>
+	<body>
+<!--we can escape an HTML attribute by using the escapeCss method:	-->
+	<h2 class="<?php echo $this->escaper->escapeCss(";`("); ?>">Title escaped:
+
+<!-- The most common situation when inserting unsafe data is between HTML tags-->
+<!--You can escape those data using the escapeHtml method: -->
+		<?php echo $this->escaper->escapeHtml("</h2><script>alert(1)</script>");?></h2>
+
+<!--Some HTML attributes like ‘href’ or ‘url’ need to be escaped differently:-->
+	<a href="<?php echo $this->escaper->escapeUrl('"><script>alert(1)</script><a href="#'); ?>">
+		Some link escaped</a>
+
+	<!--Escape HTML attributes is different from escape a full HTML content. The escape works by changing every non-alphanumeric character to the form. This kind of escaping is intended to most simpler attributes excluding complex ones like ‘href’ or ‘url’:	-->
+	<p><?php echo $this->escaper->escapeHtmlAttr(";`("); ?></p>
+
+<!--Strings to be inserted into javascript code also must be properly escaped:-->
+	<script> var name = <?php echo $this->escaper->escapeJs(";</script>Hello"); ?></script>
+	
+	
+		<?php echo $this->getContent(); ?>
+
+
+		<hr/>
+	<?php echo $this->tag->linkTo("index/index", "Start Over again!"); ?><br/>
+	<?php echo $this->tag->linkTo("index/index/Saturnı√©ƒ>", "Filter the
+	action parameter");
+	?><br/>
+	<?php echo $this->tag->linkTo("index/index?numero=!100a019&email=some
+	(one)_emailƒ@gmail.com","Filter the
+	number and email passed in the URL"); ?><br/>
+	</body>
+</html>
