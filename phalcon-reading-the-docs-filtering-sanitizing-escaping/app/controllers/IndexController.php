@@ -92,16 +92,16 @@ class IndexController extends ControllerBase
 		// The first parameter is the name of the variable to be obtained;
 		// the second is the filter to be applied on it .
 
-	    if ($this->request->has("numero")) {
+	    if ($this->request->hasQuery("numero")) {
 		    // display the number filtered if it was passed on the url
-		    echo "The number was " . $this->request->get("numero") .
-		         " and now filtered is: " . $this->request->get("numero", "int") . "<br>";
+		    echo "The number was " . $this->request->getQuery("numero") .
+		         " and now filtered is: " . $this->request->getQuery("numero", "int") . "<br>";
 	    }
 
-	    if ($this->request->has("email")) {
+	    if ($this->request->hasQuery("email")) {
 		    // display the number filtered if it was passed on the url
-		    echo "The email was " . $this->request->get("email") .
-			    " and now filtered is: " . $this->request->get("email", "email") . "<br>";
+		    echo "The email was " . $this->request->getQuery("email") .
+			    " and now filtered is: " . $this->request->getQuery("email", "email") . "<br>";
 	    }
 
 	    if ($planet != null) {

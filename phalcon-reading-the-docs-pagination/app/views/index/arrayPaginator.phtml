@@ -1,0 +1,41 @@
+<h1>IndexController - arrayPaginatorAction</h1>
+
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+	</tr>
+	<?php foreach ($page->items as $item): ?>
+	<tr>
+		<td><?php echo $item["id"]; ?></td>
+		<td><?php echo $item["name"]; ?></td>
+	</tr>
+<?php endforeach ?>
+</table>
+
+<!--
+	http://docs.phalconphp.com/en/latest/reference/pagination.html#page-attributes
+
+	PAGE ATTRIBUTES
+	The $page object has the following attributes:
+
+	Attribute            	Description
+	items 	        The set of records to be displayed at the current page
+	current 	    The current page
+	before 	        The previous page to the current one
+	next 	        The next page to the current one
+	last 	        The last page in the set of records
+	total_pages 	The number of pages
+	total_items 	The number of items in the source data
+-->
+<?php echo $this->tag->linkTo("index/arrayPaginator", "First") . " | "; ?>
+<?php echo $this->tag->linkTo("index/arrayPaginator/" . $page->before, "Previous") . "
+| "; ?>
+<?php echo $this->tag->linkTo("index/arrayPaginator/" . $page->next, "Next") . " | "; ?>
+<?php echo $this->tag->linkTo("index/arrayPaginator/" . $page->last, "Last"); ?>
+
+<br/><br/>
+<?php echo "You are in page ", $page->current, " of ", $page->total_pages; ?>
+<br/>
+<?php echo "There are a total of items of ", $page->total_items; ?>
+

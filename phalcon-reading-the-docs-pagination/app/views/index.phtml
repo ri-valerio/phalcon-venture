@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phalcon PHP Framework</title>
+	</head>
+	<body>
+		<?php echo $this->getContent(); ?>
+
+		<hr/>
+	<?php echo $this->tag->linkTo("index/index", "Go to indexAction"); ?><br/>
+	<?php echo $this->tag->linkTo("index/arrayPaginator", "Go to
+	arrayPaginatorAction"); ?><br/>
+	<?php echo $this->tag->linkTo("index/queryBuilder", "Go to
+	queryBuilderAction"); ?><br/>
+	</body>
+</html>

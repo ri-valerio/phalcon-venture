@@ -1,0 +1,49 @@
+<h1>IndexController - indexAction</h1>
+
+<table>
+		<tr>
+			<th>Id</th>
+			<th>Especialidade</th>
+			<th>Descrição</th>
+			<th>Preço por Consulta</th>
+		</tr>
+	<?php foreach ($page->items as $item): ?>
+		<tr>
+			<td><?php echo $item->id; ?></td>
+			<td><?php echo $item->especialidade; ?></td>
+			<td><?php echo $item->descricao_especialidade; ?></td>
+			<td><?php echo $item->preco_consulta; ?></td>
+		</tr>
+	<?php endforeach ?>
+</table>
+
+<!--The $page object also contains navigation data:-->
+
+<!--
+	http://docs.phalconphp.com/en/latest/reference/pagination.html#page-attributes
+
+	PAGE ATTRIBUTES
+	The $page object has the following attributes:
+
+	Attribute            	Description
+	items 	        The set of records to be displayed at the current page
+	current 	    The current page
+	before 	        The previous page to the current one
+	next 	        The next page to the current one
+	last 	        The last page in the set of records
+	total_pages 	The number of pages
+	total_items 	The number of items in the source data
+-->
+<?php echo $this->tag->linkTo("index/index", "First") . " | "; ?>
+<?php echo $this->tag->linkTo("index/index/". $page->before, "Previous") . "
+| "; ?>
+<?php echo $this->tag->linkTo("index/index/". $page->next, "Next") . " | "; ?>
+<?php echo $this->tag->linkTo("index/index/". $page->last, "Last"); ?>
+
+<br/><br/>
+<?php echo "You are in page ", $page->current, " of ", $page->total_pages; ?>
+<br/>
+<?php echo "There are a total of items of ", $page->total_items; ?>
+
+
+
