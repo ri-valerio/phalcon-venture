@@ -1,0 +1,16 @@
+<h1>IndexController - formAction</h1>
+
+<?php echo $this->tag->form('session/login') ?>
+
+<!-- login and password inputs ... -->
+<code> command + u</code>
+
+<br/>
+ para ver o token gerado tal como está na documentação a dizer: <br>
+
+<code>http://docs.phalconphp.com/en/latest/reference/security.html#cross-site-request-forgery-csrf-protection</code>
+
+<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+       value="<?php echo $this->security->getToken() ?>"/>
+
+<?php echo $this->tag->endForm(); ?>

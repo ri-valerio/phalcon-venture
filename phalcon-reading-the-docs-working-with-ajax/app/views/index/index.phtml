@@ -1,0 +1,63 @@
+<h1>IndexController - indexAction</h1>
+
+<div style="background-color: darkgoldenrod;" id="awesome">
+	Hello World - just Click me!
+</div>
+
+<div style="background-color: royalblue;" id="acordos">
+	<input type="number"
+	       value="1"
+	       id="id_acordo"
+	       name="id_acordo"
+	       placeholder="insere um id de um acordo"/>
+</div>
+
+<script>
+	$(document).ready(function () {
+
+		$.ajax({
+			url: '<?php echo $this->url->get("index/index");?>',
+			type: 'POST',
+			dataType: 'json',
+			success: function (data) {
+				alert(data);
+			},
+			error: function () {
+				alert("Ocorreu um erro logo no início!");
+			}
+		});
+
+
+		$('#awesome').click(function () {
+			$.ajax({
+				url: '<?php echo $this->url->get("index/ajaxPost");?>',
+				type: 'POST',
+				dataType: 'json',
+				success: function (data) {
+					alert(data);
+				},
+				error: function () {
+					alert("Ocorreu um erro na chamada do clique");
+				}
+			});
+		});
+
+
+		$('#acordos').click(function () {
+			$.ajax({
+				url: '<?php echo $this->url->get("index/ajaxGet");?>',
+				type: 'GET',
+				dataType: 'json',
+				data: {
+					"id" : 1
+				},
+				success: function (data) {
+					alert(data);
+				},
+				error: function () {
+					alert("Ocorreu um erro na chamada do clique");
+				}
+			});
+		});
+	});
+</script>
