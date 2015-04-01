@@ -83,8 +83,12 @@ $di->set('session', function () {
 /**
  * Registar o flashSession para poder guardar flash messagens entre requests
  */
-	// FACULTATIVO
+
 //$di->set('flashSession', function () {
-//	$flashSession = new \Phalcon\Flash\Session();
+//	$flashSession = new \Phalcon\Flash\Session(array(
+//     'error'   => 'alert-box alert radius',
+//     'success' => 'alert-box success radius',
+//     'notice'  => 'alert-box info radius'
+// ));
 //	return $flashSession;
 //});

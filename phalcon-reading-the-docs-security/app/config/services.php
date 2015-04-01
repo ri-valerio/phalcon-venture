@@ -79,3 +79,15 @@ $di->set('session', function () {
 
     return $session;
 });
+
+/**
+ * Harden the password hashing
+ *
+ * http://phalcontip.com/discussion/24/harden-the-password-hashing
+ */
+$di->set('security', function() {
+    $security = new Phalcon\Security();
+    $security->setWorkFactor(13);
+    $security->setDefaultHash(Phalcon\Security::CRYPT_BLOWFISH_Y);
+    return $security;
+});
