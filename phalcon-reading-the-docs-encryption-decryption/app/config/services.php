@@ -79,3 +79,20 @@ $di->set('session', function () {
 
     return $session;
 });
+
+/**
+ * ele já é acessível através do factoryDefault mas se quisermos definir uma
+ * chave de encriptação especial temos de redefinir aqui, ou então seria ainda
+ * possível redefinir a chave programaticamente num controller assim:
+ *
+ *       $this->crypt->setKey("key-aqui")
+ */
+//$di->set('crypt', function () {
+//
+//	$crypt = new Phalcon\Crypt();
+//
+//	//Set a global encryption key
+//	$crypt->setKey("%31.1e$i86e$f!8jz");
+//
+//	return $crypt;
+//}, TRUE);
