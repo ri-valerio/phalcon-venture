@@ -1,0 +1,36 @@
+<h1>IndexController - indexAction: Multi-Lingual Support</h1>
+
+<?php echo "Nome: ", $name, "<br>"; ?>
+
+
+<!--
+The “_” function is returning the translated string based on the index passed.
+Some strings need to incorporate placeholders for calculated data i.e. Hello %name%.
+These placeholders can be replaced with passed parameters in the “_ function.
+The passed parameters are in the form of a key/value array,
+where the key matches the placeholder name and the value is
+the actual data to be replaced:
+-->
+
+<?php echo $t->_("hi"), "<br>"; ?>
+<?php echo $t->_("hi-name", array("name" => $name)), "<br>"; ?>
+
+<?php echo $t->_("song", array("song" => "Code Monkey")), "<br>"; ?>
+
+<?php echo $t->_("bye"), "<br>"; ?>
+<?php echo $t->_("bye-name", array("name" => $name)), "<br>"; ?>
+
+
+<!--
+Some applications implement multilingual on the URL such as:
+
+		http://www.mozilla.org/es-ES/firefox/.
+
+Phalcon can implement this by using a Router!
+-->
+
+<!--
+todos os identificadores de idiomas para o browser:
+
+		http://www.metamodpro.com/browser-language-codes
+-->

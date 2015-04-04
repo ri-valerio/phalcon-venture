@@ -3,10 +3,10 @@
 return new \Phalcon\Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
-        'host'        => 'localhost',
+        'host'        => '127.0.0.1',
         'username'    => 'root',
         'password'    => '',
-        'dbname'      => 'test',
+        'dbname'      => 'pseudoclinica',
         'charset'     => 'utf8',
     ),
     'application' => array(
@@ -16,6 +16,6 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => __DIR__ . '/../../app/plugins/',
         'libraryDir'     => __DIR__ . '/../../app/library/',
         'cacheDir'       => __DIR__ . '/../../app/cache/',
-        'baseUri'        => '/phalcon-reading-the-docs-multi-lingual-support/',
+        'baseUri'        => '/phalcon-venture/phalcon-reading-the-docs-multi-lingual-support/',
     )
 ));
