@@ -6,7 +6,7 @@ return new \Phalcon\Config(array(
         'host'        => '127.0.0.1',
         'username'    => 'root',
         'password'    => '',
-        'dbname'      => 'noticiasdb',
+        'dbname'      => 'europeia_noticiasdb',
         'charset'     => 'utf8',
     ),
     'application' => array(
