@@ -56,7 +56,7 @@ exists]</h2>";
 	}
 
 
-	/* PERSISNTENT VARIABLES METHODS */
+	/* PERSISTENT VARIABLES METHODS */
 
 	public function displayPersistentVariableAction()
 	{
