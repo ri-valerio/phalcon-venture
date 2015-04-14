@@ -70,67 +70,67 @@ class Acordos extends \Phalcon\Mvc\Model
 
     public function beforeValidation()
     {
-         echo <br> . "The Method beforeValidation was executed!" . <br> ;
+         echo "<br>" . "The Method beforeValidation was executed!" . "<br>" ;
     }
 
     public function beforeValidationOnCreate()
     {
-         echo <br> . "The Method beforeValidationOnCreate was executed!" . <br> ;
+         echo "<br>" . "The Method beforeValidationOnCreate was executed!" . "<br>" ;
     }
 
     public function beforeValidationOnUpdate()
     {
-         echo <br> . "The Method beforeValidationOnUpdate was executed!" . <br> ;
+         echo "<br>" . "The Method beforeValidationOnUpdate was executed!" . "<br>" ;
     }
 
     public function onValidationFails()
     {
-         echo <br> . "The Method onValidationFails was executed!" . <br> ;
+         echo "<br>" . "The Method onValidationFails was executed!" . "<br>" ;
     }
 
     public function afterValidationOnCreate()
     {
-         echo <br> . "The Method afterValidationOnCreate was executed!" . <br> ;
+         echo "<br>" . "The Method afterValidationOnCreate was executed!" . "<br>" ;
     }
 
     public function afterValidationOnUpdate()
     {
-         echo <br> . "The Method afterValidationOnUpdate was executed!" . <br> ;
+         echo "<br>" . "The Method afterValidationOnUpdate was executed!" . "<br>" ;
     }
 
     public function afterValidation()
     {
-         echo <br> . "The Method afterValidation was executed!" . <br> ;
+         echo "<br>" . "The Method afterValidation was executed!" . "<br>" ;
     }
 
     public function beforeSave()
     {
-         echo <br> . "The Method beforeSave was executed!" . <br> ;
+         echo "<br>" . "The Method beforeSave was executed!" . "<br>" ;
     }
 
     public function beforeUpdate()
     {
-         echo <br> . "The Method beforeUpdate was executed!" . <br> ;
+         echo "<br>" . "The Method beforeUpdate was executed!" . "<br>" ;
     }
 
     public function beforeCreate()
     {
-         echo <br> . "The Method beforeCreate was executed!" . <br> ;
+         echo "<br>" . "The Method beforeCreate was executed!" . "<br>" ;
     }
 
     public function afterUpdate()
     {
-         echo <br> . "The Method afterUpdate was executed!" . <br> ;
+         echo "<br>" . "The Method afterUpdate was executed!" . "<br>" ;
     }
 
     public function afterCreate()
     {
-         echo <br> . "The Method afterCreate was executed!" . <br> ;
+         echo "<br>" . "The Method afterCreate was executed!" . "<br>" ;
     }
 
     public function afterSave()
     {
-         echo <br> . "The Method afterSave was executed!" . <br> ;
+         echo "<br>" . "The Method afterSave was executed!" . "<br>" ;
     }
 
     // The following events are available to define custom business rules
@@ -140,12 +140,12 @@ class Acordos extends \Phalcon\Mvc\Model
 
     public function beforeDelete()
     {
-         echo <br> . "The Method beforeDelete was executed!" . <br> ;
+         echo "<br>" . "The Method beforeDelete was executed!" . "<br>" ;
     }
 
     public function afterDelete()
     {
-         echo <br> . "The Method afterDelete was executed!" . <br> ;
+         echo "<br>" . "The Method afterDelete was executed!" . "<br>" ;
     }
 
     // Validation Failed Events
